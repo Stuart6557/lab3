@@ -12,7 +12,11 @@ class ListExamples {
     List<String> result = new ArrayList<>();
     for(String s: list) {
       if(sc.checkString(s)) {
-        result.add(0, s);
+        /*
+         * Old buggy code:
+         * result.add(0, s);
+         */
+        result.add(s);
       }
     }
     return result;
@@ -35,15 +39,33 @@ class ListExamples {
       }
     }
     while(index1 < list1.size()) {
+      System.out.println(index1);
       result.add(list1.get(index1));
       index1 += 1;
     }
     while(index2 < list2.size()) {
       result.add(list2.get(index2));
-      index1 += 1;
+      /*
+       * Old buggy code:
+       * index1 += 1;
+       */
+      index2 += 1;
     }
     return result;
   }
 
-
+  public static void main(String[] args) {
+    List<String> input1 = new ArrayList<>();
+    List<String> input2 = new ArrayList<>();
+    input1.add("a");
+    input1.add("a");
+    input2.add("c");
+    input2.add("z");
+    List<String> expected = new ArrayList<>();
+    expected.add("a");
+    expected.add("a");
+    expected.add("c");
+    expected.add("z");
+    List<String> actual = ListExamples.merge(input1, input2);
+  }
 }
