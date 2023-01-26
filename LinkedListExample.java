@@ -9,11 +9,14 @@ class Node {
         this.next = next;
     }
 }
+
 class LinkedList {
     Node root;
+
     public LinkedList() {
         this.root = null;
     }
+
     /**
      * Adds the value to the _beginning_ of the list
      * @param value
@@ -22,6 +25,7 @@ class LinkedList {
         // Just add at the beginning
         this.root = new Node(value, this.root);
     }
+
     /**
      * Adds the value to the _end_ of the list
      * @param value
@@ -40,15 +44,18 @@ class LinkedList {
         // Otherwise, loop until the end and add at the end with a null
         while(n.next != null) {
             n = n.next;
-            n.next = new Node(value, null);
         }
+        n.next = new Node(value, null);
     }
+
     /**
      * @return the value of the first element in the list
      */
     public int first() {
+        if(root == null) { throw new NoSuchElementException(); }
         return this.root.value;
     }
+
     /**
      * @return the value of the last element in the list
      */
@@ -64,6 +71,7 @@ class LinkedList {
         }
         return n.value;
     }
+
     /**
      * @return a string representation of the list
      */
@@ -76,6 +84,7 @@ class LinkedList {
         }
         return s;
     }
+
     /**
      * @return the number of elements in the list
      */
@@ -87,5 +96,11 @@ class LinkedList {
             n = n.next;
         }
         return i;
+    }
+}
+
+public class LinkedListExample {
+    public static void main(String[] args) {
+        
     }
 }
