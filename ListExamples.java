@@ -53,19 +53,4 @@ class ListExamples {
     }
     return result;
   }
-
-  public static void main(String[] args) {
-    List<String> input1 = new ArrayList<>();
-    List<String> input2 = new ArrayList<>();
-    input1.add("a");
-    input1.add("a");
-    input2.add("c");
-    input2.add("z");
-    List<String> expected = new ArrayList<>();
-    expected.add("a");
-    expected.add("a");
-    expected.add("c");
-    expected.add("z");
-    List<String> actual = ListExamples.merge(input1, input2);
-  }
 }
