@@ -35,4 +35,13 @@ public class ListTests {
         List<String> actual = ListExamples.merge(input1, input2);
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void testMergeEmpty() {
+        List<String> input1 = new ArrayList<>();
+        List<String> input2 = new ArrayList<>();
+        List<String> expected = new ArrayList<>();
+        List<String> actual = ListExamples.merge(input1, input2);
+        assertEquals(expected, actual);
+    }
 }
